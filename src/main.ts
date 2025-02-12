@@ -1,12 +1,19 @@
 import { page, app } from './app.ts';
+import { query } from './modules/query.ts';
 export const render = ({ renderRoot }) => {
-  renderRoot.innerHTML = `
-    <h1>Hello, World!</h1>
-  `;
+  const button = document.createElement('button');
+  renderRoot.appendChild(button);
+  button.innerText = 'Click me';
+  button.onclick = async () => {
+    query.post({
+      path: 'alipay',
+      key: 'pay',
+    })
+  };
 };
 
 if (page) {
-  page.addPage('/app-template', 'home');
+  page.addPage('/home', 'home');
   page.subscribe('home', () => {
     render({
       renderRoot: document.getElementById('ai-root'),
@@ -17,7 +24,7 @@ if (page) {
 if (app) {
   app
     .route({
-      path: 'app-template',
+      path: 'home',
       key: 'render',
     })
     .define(async (ctx) => {

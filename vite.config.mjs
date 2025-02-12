@@ -39,7 +39,7 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/api': {
-        target: 'https://kevisual.xiongxiao.me',
+        target: 'https://note.on-ai.ai',
         changeOrigin: true,
       },
       '/system/lib': {
