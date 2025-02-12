@@ -1,0 +1,42 @@
+{
+  "name": "app-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:web": "cross-env WEB_DEV=true vite --mode web",
+    "build": "vite build",
+    "esbuild": "node esbuild.config.mjs",
+    "preview": "vite preview",
+    "prepub": "envision switchOrg user",
+    "pub": "envision deploy ./dist -k app-template -v 0.0.1"
+  },
+  "keywords": [],
+  "author": "abearxiong <xiongxiao@xiongxiao.me>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.12",
+    "@kevisual/query": "0.0.7-alpha.3",
+    "@kevisual/system-lib": "^0.0.10",
+    "@kevisual/system-ui": "^0.0.3",
+    "dayjs": "^1.11.13",
+    "lodash-es": "^4.17.21",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@kevisual/router": "0.0.6-alpha-5",
+    "@kevisual/store": "0.0.1-alpha.10",
+    "@kevisual/types": "^0.0.6",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.24.2",
+    "react": "^19.0.0",
+    "vite": "^6.0.7"
+  }
+}
