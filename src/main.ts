@@ -5,10 +5,20 @@ export const render = ({ renderRoot }) => {
   renderRoot.appendChild(button);
   button.innerText = 'Click me';
   button.onclick = async () => {
-    query.post({
+    const res = await query.post({
       path: 'alipay',
       key: 'pay',
-    })
+      data: {
+        money: 100,
+        subject: 'test',
+      },
+    });
+    if (res.code === 200) {
+      const { data } = res;
+      const form = data.form; //url
+      // 使用iframe加载支付宝支付页面
+      window.open(form, '_blank');
+    }
   };
 };
 

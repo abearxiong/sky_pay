@@ -2,3 +2,6 @@
 
 
 `/system/lib/app.js` 包函的模块是 `QueryRouterServer` 和 `Page` 和 `useConfigKey`
+
+
+测试sky_pay的支付的功能模块
